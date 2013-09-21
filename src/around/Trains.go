@@ -34,7 +34,7 @@ func CheckTrains() {
 
 func checkTrainsCall(verb string) {
 
-	var url = "http://trainapi.gopagoda.com/"+verb+".php"
+	var url = getApiUrl()+verb+".php"
 	res, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
@@ -51,7 +51,6 @@ func checkTrainsCall(verb string) {
 
 	Speak(msg)
 
-	fmt.Println("Done stuff")
 }
 
 type TrainAlert struct {

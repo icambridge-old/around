@@ -10,7 +10,7 @@ import (
 )
 
 func Connect(quit chan int) {
-	res, err := http.Get("https://"+getApiKey()+"@streaming.campfirenow.com/room/568525/live.json")
+	res, err := http.Get("https://"+getApiKey()+"@streaming.campfirenow.com/room/"+getRoomId()+"/live.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -61,7 +61,7 @@ func Speak(words string) {
 	xmlReader := strings.NewReader(xmlMessage)
 
 
-	_, err := http.Post("https://"+getApiKey()+"@workstars.campfirenow.com/room/568525/speak.xml", "text/xml", xmlReader)
+	_, err := http.Post("https://"+getApiKey()+"@"+getCampfireDomain()+"/room/"+getRoomId()+"/speak.xml", "text/xml", xmlReader)
 	if err != nil {
 		log.Fatal(err)
 	}

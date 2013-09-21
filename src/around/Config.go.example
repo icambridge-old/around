@@ -3,3 +3,15 @@ package around
 func getApiKey() string {
 	return ""
 }
+
+func getCampfireDomain() string {
+	return ""
+}
+
+func getRoomId() string {
+	return ""
+}
+
+func getApiUrl() string {
+	return ""
+}
