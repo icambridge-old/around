@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("We're now sitting around the campfire")
 
    	go around.CheckTrains()
-
+	go around.StartListener()
 
 	<-routineQuit // blocks until quit is written to
 }
