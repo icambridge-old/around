@@ -21,6 +21,8 @@ func main() {
    	go around.CheckTrains()
 	go around.StartListener()
 
+	//around.NotifyOtherPeople("Hello this is a test\nSo this should be Good\n")
+
 	<-routineQuit // blocks until quit is written to
 }
 

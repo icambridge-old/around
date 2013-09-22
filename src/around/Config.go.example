@@ -1,5 +1,7 @@
 package around
 
+import "net/smtp"
+
 func getApiKey() string {
 	return ""
 }
@@ -14,4 +16,14 @@ func getRoomId() string {
 
 func getApiUrl() string {
 	return ""
+}
+
+func getSmtpAuth() smtp.Auth {
+	auth := smtp.PlainAuth(
+		"",
+		"",
+		"",
+		"smtp.sendgrid.net",
+	)
+	return auth
 }
